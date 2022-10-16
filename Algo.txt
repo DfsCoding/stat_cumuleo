@@ -1,0 +1,55 @@
+
+Le but de cumuleo est de récupérer la liste des mandataires ainsi que leurs mandats.
+
+1 mandataires possède 0 à n mandats.
+
+Un mandat possède des caractériques :
+    - année de prestation
+    - la fonction
+    - l'institution
+    - montant
+
+
+
+Le principe de l'app :
+
+    - Construire une DB en scrappant le site
+        * il faut d'abord récupérer les noms des mandataires :
+            + itérer sur chaque lettre de l'alphabet et récupérer les pages listant les mandataires https://www.cumuleo.be/recherche-mandataire/annuaire-mandataire.php?search2=m
+            + chaque nom est associé à un hyperlien pointant vers la liste des mandats du mandataires
+                (Ex de lien : https://www.cumuleo.be/mandataire/22364-jean-macours.php )
+
+
+Les possibilité de l'app :
+
+    - mettre à jour la base de données :
+        * garder une copie de l'actulle
+        * vider la DB
+        * re-scrapper le site cumuleo
+    - afficher les mandataires
+    - afficher les mandats d'un mandataire :
+        * répartition annuelle
+        * augmentation par rapport à l'année précédante en %
+    - afficher qq stat sur la page d'accueil :
+        * nbre de mandataires
+        * montant total min et max de tous les mandats par année
+        * montrer une répartition par région
+
+
+
+
+
+
+Récupérer la liste des mandataires :
+    pour chaque lettre de l'alphabet
+        faire une requete sur url1+"lettre de l'aphabet"
+        analyser le html récupéré (BeautifulSoup)
+        Dans la "soupe html" :
+            récupérer le nom du mandataire
+            récupérer l'url d'accès au données qui lui sont associées
+
+Pour chaque mandataire dans la liste
+    faire une requête sur l'url de ses données
+    analyser le html récupéré (BeautifulSoup)
+    Dans la "soupe html" :
+        récupérer
