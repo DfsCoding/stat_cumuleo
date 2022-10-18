@@ -44,5 +44,5 @@ def get_html(url):
     
 
 
-#pprint (list (get_html(constants.url_to_2020)))
-get_html(constants.url_to_2020)
+#pprint (list (get_html(constants.representative_url_list_basa)))
+get_html(constants.representative_url_list_base)

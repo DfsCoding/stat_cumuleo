@@ -1,5 +1,5 @@
 
-Le but de cumuleo est de récupérer la liste des mandataires ainsi que leurs mandats.
+## analyse des donées du site cumuleo.be
 
 1 mandataires possède 0 à n mandats.
 
@@ -11,9 +11,9 @@ Un mandat possède des caractériques :
 
 
 
-Le principe de l'app :
+Le principe de l'app stat_cumuleo :
 
-    - Construire une DB en scrappant le site
+    - Construire une DB en scrappant le site cumuleo.be
         * il faut d'abord récupérer les noms des mandataires :
             + itérer sur chaque lettre de l'alphabet et récupérer les pages listant les mandataires https://www.cumuleo.be/recherche-mandataire/annuaire-mandataire.php?search2=m
             + chaque nom est associé à un hyperlien pointant vers la liste des mandats du mandataires
@@ -23,7 +23,7 @@ Le principe de l'app :
 Les possibilité de l'app :
 
     - mettre à jour la base de données :
-        * garder une copie de l'actulle
+        * garder une copie de l'actuelle
         * vider la DB
         * re-scrapper le site cumuleo
     - afficher les mandataires

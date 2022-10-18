@@ -1,14 +1,15 @@
+# STAT_CUMULEO
 
-But de ce script :
+## But de ce script :
 
-    Récupérer des informations du site https://www.cumuleo.be pour une analyse statistique.
+    Récupérer des données du site https://www.cumuleo.be pour une analyse statistique.
 
-Quelles informations :
+## Quelles informations :
 
     - La liste des mandataires belges
     - La liste de leurs mandats par année et des rémunérations liées à ces mandats
 
-Quelles statistiques sortir :
+## Quelles statistiques sortir :
 
     - La répartition des mandataires par Région
     - Le coûts des mandataires par Région
