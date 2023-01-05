@@ -18,6 +18,10 @@ Le principe de l'app stat_cumuleo :
             + itérer sur chaque lettre de l'alphabet et récupérer les pages listant les mandataires https://www.cumuleo.be/recherche-mandataire/annuaire-mandataire.php?search2=m
             + chaque nom est associé à un hyperlien pointant vers la liste des mandats du mandataires
                 (Ex de lien : https://www.cumuleo.be/mandataire/22364-jean-macours.php )
+        * Chaque lien (https://www.cumuleo.be/mandataire/3256-geertrui-olbrechts.php) pointe vers une page web contenant 1 à x tableaux
+            + 1 tableau reprend les mandats, fonctions et professions exercés durant une année. Les données affichées sont basées sur soit :
+                = "Déclaration fédérale de mandats"
+                = "Déclaration wallonne des mandats"
 
 
 Les possibilité de l'app :

@@ -1,5 +1,6 @@
 from pprint import pprint
 
+import pandas as pd
 import requests
 import string
 
@@ -8,17 +9,12 @@ from bs4 import BeautifulSoup
 import constants
 
 
-# def get_mandataires(soupehtml):
-#    mandataires = []
-#    for nom in soupehtml.findAll("span" ,  attrs = { "class": "listingnom"}):
-#            mandataires.append(nom.text.strip())
 
-#    return mandataires
 
 def get_url_mandataires(soupehtml):
     url_mandataires = []
     nom_mandataires = []
-    mandatataires_lst = {}
+   
     for nom in soupehtml.findAll("li", attrs={"class": "listingli"}):
         url_mandat = nom.a["href"]
         nom_mandat = nom.b.text.strip()
@@ -39,10 +35,22 @@ def get_html(url):
         nom_mandataires,url_mandataires = get_url_mandataires(soup)
         nom_mandataires_lst.extend(nom_mandataires)
         url_mandataires_lst.extend(url_mandataires)
+    
     print(nom_mandataires_lst.__len__())
     return zip (nom_mandataires_lst , url_mandataires_lst)
     
 
+# Récupèrer tuples (mandataire, url vers détails)
+mandataires_url_details_lst = get_html(constants.representative_url_list_base)
+#pprint (list (mandataires_url_details_lst))
 
-#pprint (list (get_html(constants.representative_url_list_basa)))
-get_html(constants.representative_url_list_base)
+# Récupérer liste des tableaux
+for mandataire,url_details in list(mandataires_url_details_lst):
+    print(mandataire , url_details)
+    html_f = requests.get(url_details)
+    html_soup = BeautifulSoup(html_f.content,'html5lib')
+    tables_soup = html_soup.find_all("table", attrs={'class':'listemandats'})
+    print(tables_soup)
+    rep = input("Continue ?")
+    if rep.capitalize=='N':
+        break
